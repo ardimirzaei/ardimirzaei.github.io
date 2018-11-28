@@ -1,0 +1,37 @@
+languageCode = "en-us"
+title = "Ardi Mirzaei"
+baseurl = "ardimirzaei.github.io"
+theme = "aerial"
+
+[params]
+  name = "Ardi Mirzaei"
+  about = "Pharmacist - Researcher - Educator - Data Scientist"
+  copyright = "2018 Ardi Mirzaei "
+  #Disable the scrolling background by entering any string for bg_scroll. Enable by leaving bg_scroll empty.
+  bg_scroll = ""
+  favicon = "favicon.ico"
+
+[[params.social]]
+  medium = "LinkedIn"
+  icon = "linkedin"
+  link = "www.linkedin.com/in/ardi-mirzaei-54739884"
+
+[[params.social]]
+  medium = "Google"
+  icon = "google"
+  link = "https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&hl=en"
+
+[[params.social]]
+  medium = "Dribbble"
+  icon = "dribbble"
+  link = "http://sydney.edu.au/pharmacy/about/people/profiles/ardi.mirzaei.777.php"
+
+[[params.social]]
+  medium = "Github"
+  icon = "github"
+  link = "#"
+
+[[params.social]]
+  medium = "Email"
+  icon = "envelope-o"
+  link = "mailto:ardalan.mirzaei@sydney.edu.au"
