@@ -14,7 +14,7 @@ theme = "aerial"
 [[params.social]]
   medium = "LinkedIn"
   icon = "linkedin"
-  link = "www.linkedin.com/in/ardi-mirzaei-54739884"
+  link = "https://www.linkedin.com/in/ardi-mirzaei-54739884"
 
 [[params.social]]
   medium = "Google"
@@ -35,3 +35,5 @@ theme = "aerial"
   medium = "Email"
   icon = "envelope-o"
   link = "mailto:ardalan.mirzaei@sydney.edu.au"
+
+  publishDir ="/"
