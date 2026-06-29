@@ -76,7 +76,7 @@
       background-repeat: repeat-x;
       background-size: 100vw auto;
       background-position: center left;
-      animation: bg-pan 60s linear infinite;
+      animation: bg-pan 120s linear infinite;
       will-change: transform;
       z-index: -2;
     }
@@ -97,32 +97,30 @@
 
     /* ─────────────────────────────────────────
        ANIMATION SYSTEM
-       body.loading keeps everything frozen.
-       window.onload removes .loading → all
-       @keyframes fire with their own delays.
+       fill-mode:both keeps each element at the
+       "from" state (invisible) during its delay,
+       then animates in. No JS class toggling needed.
     ───────────────────────────────────────── */
-    body.loading #bg      { animation: none !important; }
-    body.loading .anim    { animation: none !important; opacity: 0 !important; }
-    body.loading .divider { animation: none !important; transform: scaleX(0) !important; }
-
     @keyframes fade-up {
       from { opacity: 0; transform: translate3d(0, 16px, 0); }
       to   { opacity: 1; transform: translate3d(0,  0px, 0); }
     }
 
     .anim {
-      opacity: 0;
-      animation: fade-up 0.8s var(--ease) both;
+      animation-name: fade-up;
+      animation-duration: 0.8s;
+      animation-timing-function: var(--ease);
+      animation-fill-mode: both;
     }
 
-    .d1 { animation-delay: 0.6s; }
-    .d2 { animation-delay: 0.9s; }
-    .d3 { animation-delay: 1.1s; }
-    .d4 { animation-delay: 1.3s; }
-    .d5 { animation-delay: 1.5s; }
-    .d6 { animation-delay: 1.7s; }
-    .d7 { animation-delay: 1.9s; }
-    .d8 { animation-delay: 2.1s; }
+    .d1 { animation-delay: 0.2s; }
+    .d2 { animation-delay: 0.5s; }
+    .d3 { animation-delay: 0.7s; }
+    .d4 { animation-delay: 0.9s; }
+    .d5 { animation-delay: 1.1s; }
+    .d6 { animation-delay: 1.3s; }
+    .d7 { animation-delay: 1.5s; }
+    .d8 { animation-delay: 1.7s; }
 
     /* Divider grows from centre */
     @keyframes grow-x {
@@ -136,10 +134,12 @@
       background: var(--accent);
       margin: 0 auto 1rem;
       border-radius: 2px;
-      transform: scaleX(0);
       transform-origin: center;
-      opacity: 0;
-      animation: grow-x 0.6s var(--ease) 1.0s both;
+      animation-name: grow-x;
+      animation-duration: 0.6s;
+      animation-timing-function: var(--ease);
+      animation-delay: 0.6s;
+      animation-fill-mode: both;
     }
 
     /* ─────────────────────────────────────────
@@ -350,15 +350,6 @@
     }
     footer a:hover { color: var(--text-mid); }
 
-    /* ─────────────────────────────────────────
-       REDUCED MOTION
-    ───────────────────────────────────────── */
-    @media (prefers-reduced-motion: reduce) {
-      #bg      { animation: none !important; }
-      .anim    { opacity: 1 !important; animation: none !important; }
-      .divider { opacity: 1 !important; transform: scaleX(1) !important; animation: none !important; }
-      .btn:hover { transform: none !important; }
-    }
 
     /* ─────────────────────────────────────────
        RESPONSIVE
@@ -386,7 +377,7 @@
   </style>
 </head>
 
-<body class="loading">
+<body>
 
   <!-- Panning background image -->
   <div id="bg"></div>
@@ -396,7 +387,7 @@
   <main>
     <div class="card">
 
-      <!-- Avatar -->
+      <!-- Avatar (commented out — uncomment to restore)
       <div class="avatar-wrap anim d1">
         <img
           class="avatar"
@@ -406,16 +397,17 @@
           height="106"
         />
       </div>
+      -->
 
       <!-- Name -->
-      <h1 class="anim d2">Ardi Mirzaei</h1>
+      <h1 class="anim d1">Ardi Mirzaei</h1>
 
       <!-- Accent divider — draws outward from centre -->
       <span class="divider" aria-hidden="true"></span>
 
       <!-- Role + affiliation -->
       <p class="subtitle anim d3">Pharmacist &middot; Researcher &middot; Educator &middot; Data Scientist</p>
-      <p class="institution anim d3">University of Sydney</p>
+      <p class="institution anim d3">Sydney</p>
 
       <!-- About -->
       <p class="about anim d4">
@@ -474,18 +466,13 @@
       </nav>
 
       <footer class="anim d8">
-        <span>&copy; 2025 Ardi Mirzaei &nbsp;&middot;&nbsp; Design by <a href="http://html5up.net">HTML5 UP</a></span>
+        <span>&copy; 2026 Ardi Mirzaei &nbsp;&middot;&nbsp; </a></span>
       </footer>
 
     </div>
   </main>
 
   <script>
-    window.onload = function() {
-      // Removing .loading releases all CSS animations simultaneously —
-      // each element then fires after its own animation-delay.
-      document.body.classList.remove('loading');
-    };
     window.ontouchmove = function() { return false; };
     window.onorientationchange = function() { window.scrollTo(0, 0); };
   </script>
