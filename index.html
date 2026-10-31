@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ardi Mirzaei — Pharmacist, researcher, data scientist</title>
-  <meta name="description" content="Ardi Mirzaei is a pharmacist, researcher and educator at the University of Sydney working on psychometrics, network analysis, missing data and health informatics." />
+  <meta name="description" content="Ardi Mirzaei is a pharmacist, researcher and educator at the University of Sydney working on AI in pharmacy, measurement, missing data and health information." />
   <link rel="canonical" href="https://ardimirzaei.github.io/" />
   <meta name="theme-color" content="#EDF1EE" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Ardi Mirzaei" />
-  <meta property="og:description" content="Pharmacist, researcher and educator working on psychometrics, network analysis and health informatics." />
+  <meta property="og:description" content="Pharmacist, researcher and educator working on AI in pharmacy, measurement, missing data and health information." />
   <meta property="og:url" content="https://ardimirzaei.github.io/" />
   <meta name="twitter:card" content="summary" />
 
@@ -136,9 +136,29 @@
     .bio {
       font-size: 1.18rem;
       line-height: 1.55;
-      max-width: 34ch;
+      max-width: 38ch;
       margin-bottom: 2rem;
     }
+
+    .ai-note {
+      border-left: 3px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 0.8rem 1rem 0.9rem;
+      max-width: 44ch;
+      margin: 0 0 1.8rem;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+    .ai-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .ai-note a { color: var(--ink); text-underline-offset: 3px; }
+    .ai-note a:hover { color: var(--accent); }
 
     .metrics {
       font-family: var(--mono);
@@ -238,6 +258,8 @@
     .node.active circle.dot { fill: var(--accent); stroke: var(--accent); }
     .node.near circle.dot { stroke: var(--accent); }
     .node.active text { fill: var(--accent); }
+    .node.feature circle.dot { stroke: var(--accent); stroke-width: 2.5; }
+    .node.feature text { fill: var(--accent); font-weight: 700; }
 
     /* ───────── Index (also the accessible version of the graph) ───────── */
     .areas {
@@ -265,6 +287,71 @@
     .areas li.active h2 button { color: var(--accent); }
     .areas li.active { background: linear-gradient(var(--accent-soft), var(--accent-soft)); }
 
+    /* ───────── Selected work and books ───────── */
+    .shelf { margin-top: 3rem; }
+    .shelf-h {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--ink);
+    }
+    .paper, .book {
+      padding: 1rem 0.8rem 1.05rem 0;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.2s var(--ease), padding 0.2s var(--ease);
+    }
+    .paper a, .book-title a {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 1.1rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .paper a:hover, .book-title a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .meta { font-size: 0.92rem; color: var(--muted); margin-top: 0.3rem; line-height: 1.45; }
+    .cites { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); margin-top: 0.35rem; }
+    .cites b { color: var(--ink); font-weight: 500; }
+    .book-title a { font-size: 1.25rem; }
+    .book {
+      display: grid;
+      grid-template-columns: 84px minmax(0, 1fr);
+      gap: 0.4rem 1.1rem;
+      align-items: start;
+    }
+    .cover {
+      display: block;
+      width: 84px;
+      height: auto;
+      border: 1px solid var(--line);
+    }
+    .cover-tile {
+      width: 84px;
+      aspect-ratio: 284 / 350;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.55rem;
+      background: var(--accent);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      line-height: 1.3;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cover-tile b { font-family: var(--display); font-size: 1.5rem; letter-spacing: -0.03em; line-height: 1; text-transform: none; }
+    .book-body .meta:first-of-type { margin-top: 0.35rem; }
+    .paper.related, .book.related {
+      background: var(--accent-soft);
+      padding-left: 0.8rem;
+    }
+
     /* ───────── Entrance ───────── */
     @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
     @keyframes draw { from { stroke-dashoffset: var(--len); } to { stroke-dashoffset: 0; } }
@@ -291,7 +378,7 @@
       html { font-size: 16px; }
       .areas { grid-template-columns: minmax(0, 1fr); }
       .areas li:nth-child(even) { padding-left: 0; border-left: 0; }
-      .node text { font-size: 17px; }
+      .node text { font-size: 22px; stroke-width: 6px; }
     }
   </style>
 </head>
@@ -309,13 +396,25 @@
       <p class="roles rise" style="--i:2">Pharmacist · Researcher · Educator · Data scientist</p>
 
       <p class="bio rise" style="--i:3">
-        I build validated measurement tools, apply network analysis to clinical questions,
-        and use data to improve how pharmacists are taught and how they practise.
+        I work on AI and data methods for pharmacy and health services: handling missing
+        data, building and validating measures, and using machine learning to understand
+        how people look for health information and how carers manage medicines for someone
+        with dementia.
       </p>
 
+      <aside class="ai-note rise" style="--i:3" aria-label="Work in artificial intelligence">
+        <p class="ai-label">Artificial intelligence</p>
+        <p>
+          Co-editor, <a href="https://www.fip.org/file/6202" target="_blank" rel="noopener noreferrer">An Artificial Intelligence Toolkit for Pharmacy</a>
+          (International Pharmaceutical Federation, 2025). Member, FIP Technology Advisory Group.
+          Chapters on AI and machine learning in two books.
+        </p>
+      </aside>
+
       <p class="metrics rise" style="--i:4">
-        <b>975+</b> citations · h-index <b>10</b> · <b>15+</b> papers —
-        <a href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <b data-metric="citations">1,111</b> citations · h-index <b data-metric="h_index">10</b> · i10-index <b data-metric="i10_index">11</b><br />
+        <a href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>,
+        as of <span data-metric="asOf">Oct 2026</span>
       </p>
 
       <nav class="links rise" style="--i:5" aria-label="Profiles and contact">
@@ -333,36 +432,116 @@
     <main class="explore" id="areas">
       <div class="panel rise" style="--i:2">
         <span class="panel-label">Research areas · how they connect</span>
-        <svg id="graph" viewBox="0 0 600 560" aria-hidden="true" focusable="false"></svg>
+        <svg id="graph" viewBox="0 0 600 530" aria-hidden="true" focusable="false"></svg>
       </div>
 
       <!-- Source of truth for the graph. Works on its own without JavaScript. -->
       <ul class="areas rise" style="--i:4" aria-label="Research areas">
-        <li data-id="psy" data-x="185" data-y="150" data-links="miss net edu">
-          <h2><button type="button">Psychometrics</button></h2>
-          <p>Developing and validating scales that measure attitudes, skills and wellbeing in health professionals.</p>
-        </li>
-        <li data-id="info" data-x="485" data-y="125" data-links="net ml edu miss">
-          <h2><button type="button">Health informatics</button></h2>
-          <p>Turning routine health and pharmacy data into evidence that can change practice.</p>
-        </li>
-        <li data-id="net" data-x="340" data-y="275" data-links="psy info ml">
-          <h2><button type="button">Network analysis</button></h2>
-          <p>Mapping how symptoms, behaviours and outcomes relate to one another in clinical data.</p>
-        </li>
-        <li data-id="miss" data-x="95" data-y="345" data-links="psy ml info">
+        <li data-id="miss" data-x="90" data-y="335" data-links="meas his">
           <h2><button type="button">Missing data</button></h2>
-          <p>Choosing and testing methods for incomplete records so that results can be trusted.</p>
+          <p>How to report, handle and test the effect of incomplete survey and clinical records.</p>
         </li>
-        <li data-id="ml" data-x="455" data-y="420" data-links="net miss info">
-          <h2><button type="button">Machine learning</button></h2>
-          <p>Applying predictive models to health questions, with attention to how well they hold up.</p>
+        <li data-id="meas" data-x="290" data-y="195" data-links="miss comm stu dem">
+          <h2><button type="button">Measurement</button></h2>
+          <p>Developing and validating questionnaires, from service quality to carer assessment.</p>
         </li>
-        <li data-id="edu" data-x="235" data-y="485" data-links="psy info">
-          <h2><button type="button">Pharmacy education</button></h2>
-          <p>Using measurement and data to improve how pharmacy students learn and are assessed.</p>
+        <li data-id="his" data-x="430" data-y="295" data-links="miss dig dem ai">
+          <h2><button type="button">Health information seeking</button></h2>
+          <p>What predicts where people look for health information, using systematic review, network analysis and machine learning.</p>
+        </li>
+        <li data-id="comm" data-x="190" data-y="85" data-links="meas access">
+          <h2><button type="button">Community pharmacy</button></h2>
+          <p>Service quality, loyalty and marketing, from my PhD and the papers that followed.</p>
+        </li>
+        <li data-id="access" data-x="80" data-y="195" data-links="comm">
+          <h2><button type="button">Medicines access</button></h2>
+          <p>Prices, availability and affordability of medicines across low- and middle-income countries.</p>
+        </li>
+        <li data-id="dem" data-x="500" data-y="115" data-links="meas his">
+          <h2><button type="button">Dementia and carers</button></h2>
+          <p>Medication management guidance and information resources for carers of people with dementia.</p>
+        </li>
+        <li data-id="dig" data-x="410" data-y="450" data-links="his stu ai">
+          <h2><button type="button">Digital pharmacy</button></h2>
+          <p>Agent-based models, dashboards and the books on pharmaceutical care in a digital world.</p>
+        </li>
+        <li data-id="ai" data-feature="1" data-x="270" data-y="360" data-links="his dig">
+          <h2><button type="button">Artificial intelligence</button></h2>
+          <p>Machine learning for health data, and practical guidance for pharmacists. Co-editor of the FIP AI toolkit, member of the FIP Technology Advisory Group.</p>
+        </li>
+        <li data-id="stu" data-x="195" data-y="470" data-links="meas dig">
+          <h2><button type="button">Pharmacy students</button></h2>
+          <p>Resilience, empathy and the use of visual dashboards in pharmacy teaching.</p>
         </li>
       </ul>
+
+      <section class="shelf" aria-labelledby="sel-h">
+        <h2 class="shelf-h" id="sel-h">Selected work</h2>
+        <ol class="papers">
+          <li class="paper" data-topics="miss">
+            <a data-paper="missing-data" href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Missing data in surveys: Key concepts, approaches, and applications</a>
+            <p class="meta">Mirzaei, Carter, Patanwala, Schneider · Research in Social and Administrative Pharmacy, 2022</p>
+            <p class="cites"><b data-cites="missing-data">460</b> citations</p>
+          </li>
+          <li class="paper" data-topics="meas">
+            <a data-paper="latent-construct" href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">How to measure a latent construct: psychometric principles for the development and validation of measurement instruments</a>
+            <p class="meta">El-Den, Schneider, Mirzaei, Carter · International Journal of Pharmacy Practice, 2020</p>
+            <p class="cites"><b data-cites="latent-construct">216</b> citations</p>
+          </li>
+          <li class="paper" data-topics="his">
+            <a data-paper="info-seeking" href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Predictors of health information–seeking behavior: systematic literature review and network analysis</a>
+            <p class="meta">Mirzaei, Aslani, Luca, Schneider · Journal of Medical Internet Research, 2021</p>
+            <p class="cites"><b data-cites="info-seeking">91</b> citations</p>
+          </li>
+          <li class="paper" data-topics="comm">
+            <a data-paper="marketing-review" href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Marketing activity in the community pharmacy sector: a scoping review</a>
+            <p class="meta">Mirzaei, Carter, Schneider · Research in Social and Administrative Pharmacy, 2018</p>
+            <p class="cites"><b data-cites="marketing-review">72</b> citations</p>
+          </li>
+          <li class="paper" data-topics="access">
+            <a data-paper="medicine-prices" href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Prices, availability, and affordability of adult medicines in 54 low-income and middle-income countries: evidence based on a secondary analysis</a>
+            <p class="meta">Oldfield, Penm, Mirzaei, Moles · The Lancet Global Health, 2025</p>
+            <p class="cites"><b data-cites="medicine-prices">67</b> citations</p>
+          </li>
+          <li class="paper" data-topics="comm meas">
+            <a data-paper="service-quality" href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Development of a questionnaire to measure consumers’ perceptions of service quality in community pharmacies</a>
+            <p class="meta">Mirzaei, Carter, Chen, Rittsteuer, Schneider · Research in Social and Administrative Pharmacy, 2019</p>
+            <p class="cites"><b data-cites="service-quality">48</b> citations</p>
+          </li>
+          <li class="paper" data-topics="dem">
+            <a data-paper="dementia-priorities" href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Priorities for medication management information resources for people with dementia and carers: a community-driven approach using a modified Delphi method</a>
+            <p class="meta">Wesson, Cross, Watson, Jokanovic, Schneider, Mirzaei et al. · Age and Ageing, 2026</p>
+            <p class="cites">Newest</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="shelf" aria-labelledby="books-h">
+        <h2 class="shelf-h" id="books-h">Selected Books and reports</h2>
+        <ul class="books">
+          <li class="book" data-topics="ai dig">
+            <div class="cover-tile" aria-hidden="true"><span>FIP<br />2025</span><b>AI</b></div>
+            <div class="book-body">
+              <p class="book-title"><a href="https://www.fip.org/file/6202" target="_blank" rel="noopener noreferrer">An Artificial Intelligence Toolkit for Pharmacy: An introduction and resource guide for pharmacists</a></p>
+              <p class="meta">International Pharmaceutical Federation (FIP), March 2025. Co-editor, with Whitley Yi (editor), Brent Sin Hidge, Mariana Guia and Paul Voigt. Written by the FIP Technology Advisory Group AI Working Group.</p>
+            </div>
+          </li>
+          <li class="book" data-topics="ai dig">
+            <img class="cover" src="assets/covers/pcdr.jpg" width="84" height="103" loading="lazy" alt="Cover of Pharmaceutical Care in Digital Revolution" />
+            <div class="book-body">
+              <p class="book-title"><a data-paper="book-pcdr" href="https://shop.elsevier.com/books/pharmaceutical-care-in-digital-revolution/mirzaei/978-0-443-13360-2" target="_blank" rel="noopener noreferrer">Pharmaceutical Care in Digital Revolution: Blending Digital with Human Innovation</a></p>
+              <p class="meta">Edited by Ardi Mirzaei and Claudia Rijcken · 2nd edition, Elsevier, 2023. First edition: Academic Press, 2019. Includes the chapter &ldquo;The artificial intelligence pizza&rdquo;.</p>
+            </div>
+          </li>
+          <li class="book" data-topics="ai his miss">
+            <img class="cover" src="assets/covers/crm-vol2.jpg" width="84" height="103" loading="lazy" alt="Cover of Contemporary Research Methods in Pharmacy and Health Services, Volume 2" />
+            <div class="book-body">
+              <p class="book-title"><a data-paper="book-crm" href="https://shop.elsevier.com/books/contemporary-research-methods-in-pharmacy-and-health-services-volume-2/chen/978-0-443-44607-8" target="_blank" rel="noopener noreferrer">Contemporary Research Methods in Pharmacy and Health Services, Volume 2</a></p>
+              <p class="meta">Edited by Chen, Desselle, Aslani, Tonin, Chen and Garcia Cardenas · Elsevier, 2026. Author of the chapter on machine learning for healthcare data integration, using health information-seeking data. Also wrote a chapter on handling missing data in Volume 1 (2022).</p>
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
 
   </div>
@@ -373,6 +552,7 @@
     var items = Array.prototype.slice.call(document.querySelectorAll('.areas li'));
     var NS = 'http://www.w3.org/2000/svg';
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var related = Array.prototype.slice.call(document.querySelectorAll('[data-topics]'));
 
     function el(name, attrs, parent) {
       var n = document.createElementNS(NS, name);
@@ -392,11 +572,12 @@
       var id = li.dataset.id;
       var links = li.dataset.links.split(' ');
       var name = li.querySelector('button').textContent;
-      var g = el('g', { 'class': 'node' + (reduce ? '' : ' in') }, nodeLayer);
+      var g = el('g', { 'class': 'node' + (li.dataset.feature ? ' feature' : '') + (reduce ? '' : ' in') }, nodeLayer);
       g.style.setProperty('--i', i);
       el('circle', { 'class': 'hit', r: 34 }, g);
-      el('circle', { 'class': 'dot', r: 6 + links.length * 1.6 }, g);
-      var t = el('text', { y: -(14 + links.length * 1.6) }, g);
+      var rad = 6 + links.length * 1.6 + (li.dataset.feature ? 4 : 0);
+      el('circle', { 'class': 'dot', r: rad }, g);
+      var t = el('text', { y: -(rad + 8) }, g);
       t.textContent = name;
       nodes[id] = {
         id: id, li: li, g: g, links: links,
@@ -472,6 +653,9 @@
       edges.forEach(function (e) {
         e.line.classList.toggle('on', e.a === id || e.b === id);
       });
+      related.forEach(function (r) {
+        r.classList.toggle('related', r.dataset.topics.split(' ').indexOf(id) > -1);
+      });
     }
     function clear() {
       svg.classList.remove('has-active');
@@ -480,6 +664,7 @@
         nodes[k].li.classList.remove('active');
       });
       edges.forEach(function (e) { e.line.classList.remove('on'); });
+      related.forEach(function (r) { r.classList.remove('related'); });
     }
 
     Object.keys(nodes).forEach(function (id) {
@@ -499,6 +684,31 @@
     document.addEventListener('click', function (e) {
       if (!e.target.closest('.node') && !e.target.closest('.areas')) clear();
     });
+
+    // Live numbers. data/scholar.json is refreshed weekly by .github/workflows/update-scholar.yml.
+    // If the file is missing (or the page is opened from disk) the numbers written in the HTML stay.
+    fetch('data/scholar.json')
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        var fmt = function (n) { return Number(n).toLocaleString('en-AU'); };
+        ['citations', 'h_index', 'i10_index'].forEach(function (k) {
+          var node = document.querySelector('[data-metric="' + k + '"]');
+          if (node && isFinite(d[k])) node.textContent = fmt(d[k]);
+        });
+        var when = document.querySelector('[data-metric="asOf"]');
+        var date = new Date(d.asOf);
+        if (when && !isNaN(date)) {
+          when.textContent = date.toLocaleDateString('en-AU', { month: 'short', year: 'numeric' });
+        }
+        Object.keys(d.papers || {}).forEach(function (id) {
+          var p = d.papers[id];
+          var c = document.querySelector('[data-cites="' + id + '"]');
+          if (c && isFinite(p.cites)) c.textContent = fmt(p.cites);
+          var a = document.querySelector('[data-paper="' + id + '"]');
+          if (a && p.link) a.href = p.link;
+        });
+      })
+      .catch(function () { /* keep the static numbers */ });
   })();
   </script>
 </body>

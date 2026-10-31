@@ -1,0 +1,15 @@
+{
+  "author_id": "I7_fS5sAAAAJ",
+  "_note": "Hand-edited. 'papers' maps a page id to the start of the paper's title as it appears on Google Scholar. scripts/update-scholar.mjs uses it to pull citation counts and links into data/scholar.json. If several Scholar entries match, the most-cited one wins.",
+  "papers": {
+    "missing-data": "Missing data in surveys: Key concepts",
+    "latent-construct": "How to measure a latent construct",
+    "info-seeking": "Predictors of health information-seeking behavior: systematic literature review and network analysis",
+    "marketing-review": "Marketing activity in the community pharmacy sector",
+    "medicine-prices": "Prices, availability, and affordability of adult medicines",
+    "service-quality": "Development of a questionnaire to measure consumers",
+    "dementia-priorities": "Priorities for medication management information resources",
+    "book-pcdr": "Pharmaceutical Care in Digital Revolution: Insights Towards Circular Innovation",
+    "book-crm": "Contemporary research methods in pharmacy and health services"
+  }
+}

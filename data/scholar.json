@@ -1,0 +1,19 @@
+{
+  "asOf": "2026-10-31",
+  "source": "manual snapshot of Google Scholar; replaced automatically once the GitHub Action runs",
+  "citations": 1111,
+  "h_index": 10,
+  "i10_index": 11,
+  "papers": {
+    "missing-data": { "cites": 460 },
+    "latent-construct": { "cites": 216 },
+    "info-seeking": { "cites": 91 },
+    "marketing-review": { "cites": 72 },
+    "medicine-prices": { "cites": 67 },
+    "service-quality": { "cites": 48 },
+    "dementia-priorities": { "cites": 0 },
+    "book-pcdr": { "cites": 19 },
+    "book-crm": { "cites": 25 }
+  },
+  "articles": []
+}
