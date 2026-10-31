@@ -3,479 +3,503 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ardi Mirzaei</title>
-  <meta name="description" content="Pharmacist, researcher, and educator at the University of Sydney." />
+  <title>Ardi Mirzaei — Pharmacist, researcher, data scientist</title>
+  <meta name="description" content="Ardi Mirzaei is a pharmacist, researcher and educator at the University of Sydney working on psychometrics, network analysis, missing data and health informatics." />
+  <link rel="canonical" href="https://ardimirzaei.github.io/" />
+  <meta name="theme-color" content="#EDF1EE" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ardi Mirzaei" />
+  <meta property="og:description" content="Pharmacist, researcher and educator working on psychometrics, network analysis and health informatics." />
+  <meta property="og:url" content="https://ardimirzaei.github.io/" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23EDF1EE'/%3E%3Cpath d='M9 22 16 8l7 14M11.5 17h9' fill='none' stroke='%233341E0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ardi Mirzaei",
+    "url": "https://ardimirzaei.github.io/",
+    "jobTitle": "Pharmacist, researcher and educator",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Sydney" },
+    "email": "mailto:ardalan.mirzaei@sydney.edu.au",
+    "sameAs": [
+      "https://orcid.org/0000-0002-1398-0648",
+      "https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ",
+      "https://www.linkedin.com/in/ArdiMirzaei",
+      "https://github.com/ardimirzaei"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
 
   <style>
-    /* ─────────────────────────────────────────
-       RESET
-    ───────────────────────────────────────── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     ul { list-style: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; text-align: inherit; }
 
-    /* ─────────────────────────────────────────
-       TOKENS
-    ───────────────────────────────────────── */
     :root {
-      --accent:        #5ec8be;
-      --accent-dim:    rgba(94, 200, 190, 0.10);
-      --accent-border: rgba(94, 200, 190, 0.30);
-      --accent-ring:   rgba(94, 200, 190, 0.35);
-      --accent-glow:   rgba(94, 200, 190, 0.12);
-      --text-hi:       #eef2f7;
-      --text-mid:      #9ab3c2;
-      --text-lo:       #526878;
-      --surface:       rgba(255, 255, 255, 0.05);
-      --surface-b:     rgba(255, 255, 255, 0.08);
-      --ease:          cubic-bezier(0.4, 0, 0.2, 1);
+      --paper:   #EDF1EE;
+      --panel:   #F6F9F7;
+      --ink:     #14211F;
+      --muted:   #4F5F5B;
+      --line:    #BFCBC6;
+      --accent:  #3341E0;
+      --accent-soft: rgba(51, 65, 224, 0.09);
+
+      --display: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+      --body:    'Newsreader', Georgia, serif;
+      --mono:    'JetBrains Mono', ui-monospace, Consolas, monospace;
+      --ease:    cubic-bezier(0.22, 0.61, 0.36, 1);
     }
 
-    /* ─────────────────────────────────────────
-       BASE
-    ───────────────────────────────────────── */
-    html {
-      height: 100%;
-      font-size: 16px;
-    }
+    html { font-size: 17px; -webkit-text-size-adjust: 100%; }
     body {
-      min-height: 100%;
-      font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
-      font-weight: 300;
-      color: var(--text-hi);
-      overflow-x: hidden;
-      overflow-y: auto;
-      background: #060e18;
-    }
-
-    /* ─────────────────────────────────────────
-       BACKGROUND — panning image
-       Wide div (300% viewport width) slides left
-       over 60s, seamlessly looping.
-    ───────────────────────────────────────── */
-    @keyframes bg-pan {
-      from { transform: translate3d(0, 0, 0); }
-      to   { transform: translate3d(-66.666%, 0, 0); }
-    }
-
-    #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      /* 3 tile-widths wide so the loop is invisible */
-      width: 300vw;
-      height: 100%;
-      background-image: url('css/images/renders-br-7zraQoJHmqQ-unsplash.jpg');
-      background-repeat: repeat-x;
-      background-size: 100vw auto;
-      background-position: center left;
-      animation: bg-pan 120s linear infinite;
-      will-change: transform;
-      z-index: -2;
-    }
-
-    /* Dark gradient overlay to keep text readable */
-    #overlay {
-      position: fixed;
-      inset: 0;
-      background:
-        linear-gradient(
-          160deg,
-          rgba(4,  12, 28, 0.87) 0%,
-          rgba(8,  18, 38, 0.78) 50%,
-          rgba(4,  10, 24, 0.92) 100%
-        );
-      z-index: -1;
-    }
-
-    /* ─────────────────────────────────────────
-       ANIMATION SYSTEM
-       fill-mode:both keeps each element at the
-       "from" state (invisible) during its delay,
-       then animates in. No JS class toggling needed.
-    ───────────────────────────────────────── */
-    @keyframes fade-up {
-      from { opacity: 0; transform: translate3d(0, 16px, 0); }
-      to   { opacity: 1; transform: translate3d(0,  0px, 0); }
-    }
-
-    .anim {
-      animation-name: fade-up;
-      animation-duration: 0.8s;
-      animation-timing-function: var(--ease);
-      animation-fill-mode: both;
-    }
-
-    .d1 { animation-delay: 0.2s; }
-    .d2 { animation-delay: 0.5s; }
-    .d3 { animation-delay: 0.7s; }
-    .d4 { animation-delay: 0.9s; }
-    .d5 { animation-delay: 1.1s; }
-    .d6 { animation-delay: 1.3s; }
-    .d7 { animation-delay: 1.5s; }
-    .d8 { animation-delay: 1.7s; }
-
-    /* Divider grows from centre */
-    @keyframes grow-x {
-      from { transform: scaleX(0); opacity: 0; }
-      to   { transform: scaleX(1); opacity: 1; }
-    }
-    .divider {
-      display: block;
-      width: 52px;
-      height: 2px;
-      background: var(--accent);
-      margin: 0 auto 1rem;
-      border-radius: 2px;
-      transform-origin: center;
-      animation-name: grow-x;
-      animation-duration: 0.6s;
-      animation-timing-function: var(--ease);
-      animation-delay: 0.6s;
-      animation-fill-mode: both;
-    }
-
-    /* ─────────────────────────────────────────
-       LAYOUT
-    ───────────────────────────────────────── */
-    main {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 1rem;
+      line-height: 1.6;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .skip {
+      position: absolute; left: 1rem; top: -4rem;
+      background: var(--ink); color: var(--paper);
+      font-family: var(--mono); font-size: 0.8rem;
+      padding: 0.6rem 0.9rem; z-index: 10;
+    }
+    .skip:focus { top: 1rem; }
+
+    /* ───────── Layout ───────── */
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 3.5rem);
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .identity {
+      position: sticky;
+      top: clamp(1.5rem, 4vw, 3.5rem);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 5rem 1.5rem 3rem;
-      text-align: center;
+      min-height: calc(100vh - 2 * clamp(1.5rem, 4vw, 3.5rem));
     }
 
-    .card {
-      width: 100%;
-      max-width: 560px;
+    /* ───────── Identity ───────── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
     }
+    .eyebrow b { color: var(--accent); font-weight: 500; }
 
-    /* ─────────────────────────────────────────
-       AVATAR
-    ───────────────────────────────────────── */
-    .avatar-wrap {
-      display: inline-block;
-      margin-bottom: 1.8rem;
-    }
-    .avatar {
-      width: 106px;
-      height: 106px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      border: 2px solid var(--accent-ring);
-      box-shadow:
-        0 0 0 5px var(--accent-glow),
-        0 12px 40px rgba(0, 0, 0, 0.55);
-      transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
-    }
-    .avatar:hover {
-      border-color: var(--accent);
-      box-shadow:
-        0 0 0 8px rgba(94, 200, 190, 0.18),
-        0 16px 50px rgba(0, 0, 0, 0.60);
-    }
-
-    /* ─────────────────────────────────────────
-       NAME
-    ───────────────────────────────────────── */
     h1 {
-      font-family: 'Lora', Georgia, serif;
-      font-size: clamp(2rem, 5.5vw, 3.1rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: var(--text-hi);
-      margin-bottom: 0.9rem;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(3.4rem, 8.4vw, 7.2rem);
+      line-height: 0.9;
+      letter-spacing: -0.045em;
+      margin-bottom: 1.6rem;
+    }
+    h1 span { display: block; }
+    h1 span:last-child { color: var(--accent); }
+
+    .roles {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .roles { margin-bottom: 1.8rem; }
+
+    .bio {
+      font-size: 1.18rem;
+      line-height: 1.55;
+      max-width: 34ch;
+      margin-bottom: 2rem;
     }
 
-    /* ─────────────────────────────────────────
-       SUBTITLE
-    ───────────────────────────────────────── */
-    .subtitle {
+    .metrics {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-bottom: 2.2rem;
+    }
+    .metrics a { color: inherit; text-underline-offset: 3px; }
+    .metrics a:hover { color: var(--accent); }
+    .metrics b { color: var(--ink); font-weight: 500; }
+
+    .links {
+      margin-top: auto;
+      border-top: 1px solid var(--ink);
+    }
+    .links a {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.62rem 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      text-decoration: none;
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 1.02rem;
+      transition: color 0.2s var(--ease), padding 0.2s var(--ease);
+    }
+    .links a span {
+      font-family: var(--mono);
       font-size: 0.72rem;
       font-weight: 400;
-      letter-spacing: 0.22em;
+      color: var(--muted);
+      transition: transform 0.2s var(--ease), color 0.2s var(--ease);
+    }
+    .links a:hover { color: var(--accent); padding-left: 0.4rem; }
+    .links a:hover span { color: var(--accent); transform: translate(2px, -2px); }
+
+    .copy {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin-top: 1.2rem;
+    }
+
+    /* ───────── Graph ───────── */
+    .explore { min-width: 0; }
+
+    .panel {
+      background:
+        radial-gradient(circle, var(--line) 1px, transparent 1.4px) 0 0 / 22px 22px,
+        var(--panel);
+      border: 1px solid var(--ink);
+      position: relative;
+    }
+    .panel-label {
+      position: absolute; left: 0.9rem; top: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-mid);
-      line-height: 1.8;
-      margin-bottom: 0.3rem;
+      color: var(--muted);
     }
-    .institution {
-      font-size: 0.80rem;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--text-lo);
-      margin-bottom: 2.2rem;
-    }
+    #graph { display: block; width: 100%; height: auto; touch-action: manipulation; }
 
-    /* ─────────────────────────────────────────
-       ABOUT
-    ───────────────────────────────────────── */
-    .about {
-      font-size: 0.98rem;
-      font-weight: 300;
-      line-height: 1.95;
-      color: var(--text-mid);
-      margin-bottom: 2.2rem;
+    .edge {
+      stroke: var(--ink);
+      stroke-opacity: 0.28;
+      stroke-width: 1;
+      transition: stroke-opacity 0.25s var(--ease), stroke 0.25s var(--ease), stroke-width 0.25s var(--ease);
     }
+    .node { cursor: pointer; transition: opacity 0.25s var(--ease); }
+    .node circle.dot {
+      fill: var(--panel);
+      stroke: var(--ink);
+      stroke-width: 1.5;
+      transition: fill 0.25s var(--ease), stroke 0.25s var(--ease);
+    }
+    .node text {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 15px;
+      fill: var(--ink);
+      text-anchor: middle;
+      paint-order: stroke;
+      stroke: var(--panel);
+      stroke-width: 5px;
+      stroke-linejoin: round;
+    }
+    .node .hit { fill: transparent; }
 
-    /* ─────────────────────────────────────────
-       TAGS
-    ───────────────────────────────────────── */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      justify-content: center;
-      margin-bottom: 2.2rem;
-    }
-    .tag {
-      font-size: 0.65rem;
-      font-weight: 400;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid var(--accent-border);
-      background: var(--accent-dim);
-      padding: 0.28em 0.85em;
-      border-radius: 99px;
-      transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
-    }
-    .tag:hover {
-      background: rgba(94, 200, 190, 0.18);
-      border-color: var(--accent);
-    }
+    #graph.has-active .node { opacity: 0.32; }
+    #graph.has-active .edge { stroke-opacity: 0.1; }
+    #graph.has-active .node.near,
+    #graph.has-active .node.active { opacity: 1; }
+    #graph.has-active .edge.on { stroke: var(--accent); stroke-opacity: 1; stroke-width: 2; }
+    .node.active circle.dot { fill: var(--accent); stroke: var(--accent); }
+    .node.near circle.dot { stroke: var(--accent); }
+    .node.active text { fill: var(--accent); }
 
-    /* ─────────────────────────────────────────
-       STATS
-    ───────────────────────────────────────── */
-    .stats {
-      display: flex;
-      justify-content: center;
-      background: var(--surface);
-      border: 1px solid var(--surface-b);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 2.2rem;
+    /* ───────── Index (also the accessible version of the graph) ───────── */
+    .areas {
+      margin-top: 1.6rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--ink);
     }
-    .stat {
-      flex: 1;
-      padding: 1rem 0.5rem;
-      border-right: 1px solid var(--surface-b);
+    .areas li {
+      padding: 1rem 1rem 1.1rem 0;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.2s var(--ease);
     }
-    .stat:last-child { border-right: none; }
-    .stat-n {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--text-hi);
-      display: block;
-      line-height: 1;
-      margin-bottom: 0.28rem;
-    }
-    .stat-l {
-      font-size: 0.60rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-lo);
-    }
-
-    /* ─────────────────────────────────────────
-       LINK BUTTONS
-    ───────────────────────────────────────── */
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      justify-content: center;
-      margin-bottom: 2.8rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.42rem;
-      text-decoration: none;
-      color: var(--text-mid);
-      background: var(--surface);
-      border: 1px solid var(--surface-b);
-      border-radius: 6px;
-      padding: 0.52rem 1rem;
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.80rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      transition:
-        color       0.22s var(--ease),
-        background  0.22s var(--ease),
-        border-color 0.22s var(--ease),
-        transform   0.22s var(--ease);
-    }
-    .btn i {
-      font-size: 0.85rem;
-      opacity: 0.65;
-      transition: opacity 0.22s var(--ease);
-    }
-    .btn:hover {
-      color: var(--accent);
-      background: var(--accent-dim);
-      border-color: var(--accent-border);
-      transform: translateY(-2px);
-    }
-    .btn:hover i { opacity: 1; }
-
-    /* ─────────────────────────────────────────
-       FOOTER
-    ───────────────────────────────────────── */
-    footer {
-      font-size: 0.66rem;
-      letter-spacing: 0.07em;
-      color: var(--text-lo);
-    }
-    footer a {
-      color: inherit;
-      text-decoration: none;
+    .areas li:nth-child(even) { padding-left: 1rem; padding-right: 0; border-left: 1px solid var(--line); }
+    .areas h2 { font-size: 1rem; line-height: 1.2; }
+    .areas h2 button {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.08rem;
+      letter-spacing: -0.01em;
+      width: 100%;
       transition: color 0.2s var(--ease);
     }
-    footer a:hover { color: var(--text-mid); }
+    .areas p { font-size: 0.95rem; color: var(--muted); margin-top: 0.3rem; line-height: 1.45; }
+    .areas li.active h2 button { color: var(--accent); }
+    .areas li.active { background: linear-gradient(var(--accent-soft), var(--accent-soft)); }
 
+    /* ───────── Entrance ───────── */
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes draw { from { stroke-dashoffset: var(--len); } to { stroke-dashoffset: 0; } }
+    @keyframes pop  { from { opacity: 0; } to { opacity: 1; } }
 
-    /* ─────────────────────────────────────────
-       RESPONSIVE
-    ───────────────────────────────────────── */
-    @media (max-width: 600px) {
-      main { padding: 4rem 1.25rem 2.5rem; }
+    .rise { animation: rise 0.8s var(--ease) both; animation-delay: calc(var(--i, 0) * 90ms); }
+    .edge.drawn { stroke-dasharray: var(--len); animation: draw 1.1s var(--ease) both; animation-delay: calc(0.5s + var(--i, 0) * 70ms); }
+    .node.in { animation: pop 0.6s var(--ease) both; animation-delay: calc(0.3s + var(--i, 0) * 90ms); }
 
-      #bg {
-        /* On mobile tiles are smaller — still 3 wide */
-        background-size: 200vw auto;
-        width: 600vw;
-      }
-      @keyframes bg-pan {
-        from { transform: translate3d(0, 0, 0); }
-        to   { transform: translate3d(-66.666%, 0, 0); }
-      }
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .edge.drawn, .node.in { animation: none; }
+      .edge.drawn { stroke-dasharray: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
 
-      .avatar   { width: 88px; height: 88px; }
-      .about    { font-size: 0.92rem; }
-      .stats    { flex-direction: column; }
-      .stat     { border-right: none; border-bottom: 1px solid var(--surface-b); }
-      .stat:last-child { border-bottom: none; }
-      .btn      { font-size: 0.76rem; padding: 0.48rem 0.85rem; }
+    /* ───────── Responsive ───────── */
+    @media (max-width: 900px) {
+      .page { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+      .identity { position: static; min-height: 0; }
+      .links { margin-top: 0; }
+      .bio { max-width: 42ch; }
+    }
+    @media (max-width: 520px) {
+      html { font-size: 16px; }
+      .areas { grid-template-columns: minmax(0, 1fr); }
+      .areas li:nth-child(even) { padding-left: 0; border-left: 0; }
+      .node text { font-size: 17px; }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip" href="#areas">Skip to research areas</a>
 
-  <!-- Panning background image -->
-  <div id="bg"></div>
-  <!-- Dark overlay -->
-  <div id="overlay"></div>
+  <div class="page">
 
-  <main>
-    <div class="card">
+    <header class="identity">
+      <p class="eyebrow rise" style="--i:0">University of Sydney <b>/</b> Sydney, Australia</p>
 
-      <!-- Avatar (commented out — uncomment to restore)
-      <div class="avatar-wrap anim d1">
-        <img
-          class="avatar"
-          src="https://avatars.githubusercontent.com/u/45409241?v=4"
-          alt="Photo of Ardi Mirzaei"
-          width="106"
-          height="106"
-        />
-      </div>
-      -->
+      <h1 class="rise" style="--i:1"><span>Ardi</span><span>Mirzaei</span></h1>
 
-      <!-- Name -->
-      <h1 class="anim d1">Ardi Mirzaei</h1>
+      <p class="roles rise" style="--i:2">Pharmacist · Researcher · Educator · Data scientist</p>
 
-      <!-- Accent divider — draws outward from centre -->
-      <span class="divider" aria-hidden="true"></span>
-
-      <!-- Role + affiliation -->
-      <p class="subtitle anim d3">Pharmacist &middot; Researcher &middot; Educator &middot; Data Scientist</p>
-      <p class="institution anim d3">Sydney</p>
-
-      <!-- About -->
-      <p class="about anim d4">
-        I work at the intersection of health informatics, psychometrics, and data
-        science — developing validated measurement tools, applying network analysis
-        to clinical questions, and building data-driven approaches to pharmacy
-        education and practice.
+      <p class="bio rise" style="--i:3">
+        I build validated measurement tools, apply network analysis to clinical questions,
+        and use data to improve how pharmacists are taught and how they practise.
       </p>
 
-      <!-- Research interest tags -->
-      <div class="tags anim d5">
-        <span class="tag">Health Informatics</span>
-        <span class="tag">Psychometrics</span>
-        <span class="tag">Network Analysis</span>
-        <span class="tag">Missing Data</span>
-        <span class="tag">Pharmacy Education</span>
-        <span class="tag">Machine Learning</span>
-      </div>
+      <p class="metrics rise" style="--i:4">
+        <b>975+</b> citations · h-index <b>10</b> · <b>15+</b> papers —
+        <a href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      </p>
 
-      <!-- Academic stats -->
-      <div class="stats anim d6">
-        <div class="stat">
-          <span class="stat-n">975+</span>
-          <span class="stat-l">Citations</span>
-        </div>
-        <div class="stat">
-          <span class="stat-n">10</span>
-          <span class="stat-l">h-index</span>
-        </div>
-        <div class="stat">
-          <span class="stat-n">15+</span>
-          <span class="stat-l">Publications</span>
-        </div>
-      </div>
-
-      <!-- Profile links -->
-      <nav class="links anim d7" aria-label="Profiles and contact">
-        <a href="https://www.linkedin.com/in/ArdiMirzaei" class="btn" target="_blank" rel="noopener noreferrer">
-          <i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn
-        </a>
-        <a href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&hl=en" class="btn" target="_blank" rel="noopener noreferrer">
-          <i class="fa fa-google" aria-hidden="true"></i>Scholar
-        </a>
-        <a href="https://orcid.org/0000-0002-1398-0648" class="btn" target="_blank" rel="noopener noreferrer">
-          <i class="fa fa-university" aria-hidden="true"></i>ORCID
-        </a>
-        <a href="https://twitter.com/ardimirzaei" class="btn" target="_blank" rel="noopener noreferrer">
-          <i class="fa fa-twitter" aria-hidden="true"></i>Twitter
-        </a>
-        <a href="https://github.com/ardimirzaei" class="btn" target="_blank" rel="noopener noreferrer">
-          <i class="fa fa-github" aria-hidden="true"></i>GitHub
-        </a>
-        <a href="mailto:ardalan.mirzaei@sydney.edu.au" class="btn">
-          <i class="fa fa-envelope-o" aria-hidden="true"></i>Email
-        </a>
+      <nav class="links rise" style="--i:5" aria-label="Profiles and contact">
+        <a href="mailto:ardalan.mirzaei@sydney.edu.au">Email <span>ardalan.mirzaei@sydney.edu.au</span></a>
+        <a href="https://scholar.google.com.au/citations?user=I7_fS5sAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Publications <span>Google Scholar ↗</span></a>
+        <a href="https://orcid.org/0000-0002-1398-0648" target="_blank" rel="noopener noreferrer">ORCID <span>0000-0002-1398-0648 ↗</span></a>
+        <a href="https://github.com/ardimirzaei" target="_blank" rel="noopener noreferrer">GitHub <span>ardimirzaei ↗</span></a>
+        <a href="https://www.linkedin.com/in/ArdiMirzaei" target="_blank" rel="noopener noreferrer">LinkedIn <span>ArdiMirzaei ↗</span></a>
+        <a href="https://twitter.com/ardimirzaei" target="_blank" rel="noopener noreferrer">X / Twitter <span>@ardimirzaei ↗</span></a>
       </nav>
 
-      <footer class="anim d8">
-        <span>&copy; 2026 Ardi Mirzaei &nbsp;&middot;&nbsp; </a></span>
-      </footer>
+      <p class="copy">&copy; 2026 Ardi Mirzaei</p>
+    </header>
 
-    </div>
-  </main>
+    <main class="explore" id="areas">
+      <div class="panel rise" style="--i:2">
+        <span class="panel-label">Research areas · how they connect</span>
+        <svg id="graph" viewBox="0 0 600 560" aria-hidden="true" focusable="false"></svg>
+      </div>
+
+      <!-- Source of truth for the graph. Works on its own without JavaScript. -->
+      <ul class="areas rise" style="--i:4" aria-label="Research areas">
+        <li data-id="psy" data-x="185" data-y="150" data-links="miss net edu">
+          <h2><button type="button">Psychometrics</button></h2>
+          <p>Developing and validating scales that measure attitudes, skills and wellbeing in health professionals.</p>
+        </li>
+        <li data-id="info" data-x="485" data-y="125" data-links="net ml edu miss">
+          <h2><button type="button">Health informatics</button></h2>
+          <p>Turning routine health and pharmacy data into evidence that can change practice.</p>
+        </li>
+        <li data-id="net" data-x="340" data-y="275" data-links="psy info ml">
+          <h2><button type="button">Network analysis</button></h2>
+          <p>Mapping how symptoms, behaviours and outcomes relate to one another in clinical data.</p>
+        </li>
+        <li data-id="miss" data-x="95" data-y="345" data-links="psy ml info">
+          <h2><button type="button">Missing data</button></h2>
+          <p>Choosing and testing methods for incomplete records so that results can be trusted.</p>
+        </li>
+        <li data-id="ml" data-x="455" data-y="420" data-links="net miss info">
+          <h2><button type="button">Machine learning</button></h2>
+          <p>Applying predictive models to health questions, with attention to how well they hold up.</p>
+        </li>
+        <li data-id="edu" data-x="235" data-y="485" data-links="psy info">
+          <h2><button type="button">Pharmacy education</button></h2>
+          <p>Using measurement and data to improve how pharmacy students learn and are assessed.</p>
+        </li>
+      </ul>
+    </main>
+
+  </div>
 
   <script>
-    window.ontouchmove = function() { return false; };
-    window.onorientationchange = function() { window.scrollTo(0, 0); };
-  </script>
+  (function () {
+    var svg = document.getElementById('graph');
+    var items = Array.prototype.slice.call(document.querySelectorAll('.areas li'));
+    var NS = 'http://www.w3.org/2000/svg';
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    function el(name, attrs, parent) {
+      var n = document.createElementNS(NS, name);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      if (parent) parent.appendChild(n);
+      return n;
+    }
+
+    var nodes = {};
+    var edges = [];
+    var seen = {};
+
+    var edgeLayer = el('g', {}, svg);
+    var nodeLayer = el('g', {}, svg);
+
+    items.forEach(function (li, i) {
+      var id = li.dataset.id;
+      var links = li.dataset.links.split(' ');
+      var name = li.querySelector('button').textContent;
+      var g = el('g', { 'class': 'node' + (reduce ? '' : ' in') }, nodeLayer);
+      g.style.setProperty('--i', i);
+      el('circle', { 'class': 'hit', r: 34 }, g);
+      el('circle', { 'class': 'dot', r: 6 + links.length * 1.6 }, g);
+      var t = el('text', { y: -(14 + links.length * 1.6) }, g);
+      t.textContent = name;
+      nodes[id] = {
+        id: id, li: li, g: g, links: links,
+        bx: +li.dataset.x, by: +li.dataset.y,
+        ph: i * 1.7, sp: 0.7 + (i % 3) * 0.25,
+        x: +li.dataset.x, y: +li.dataset.y
+      };
+    });
+
+    Object.keys(nodes).forEach(function (a) {
+      nodes[a].links.forEach(function (b) {
+        var key = [a, b].sort().join('-');
+        if (seen[key] || !nodes[b]) return;
+        seen[key] = 1;
+        var line = el('line', { 'class': 'edge' }, edgeLayer);
+        edges.push({ a: a, b: b, line: line });
+      });
+    });
+
+    function place() {
+      Object.keys(nodes).forEach(function (id) {
+        var n = nodes[id];
+        n.g.setAttribute('transform', 'translate(' + n.x.toFixed(1) + ' ' + n.y.toFixed(1) + ')');
+      });
+      edges.forEach(function (e) {
+        var A = nodes[e.a], B = nodes[e.b];
+        e.line.setAttribute('x1', A.x.toFixed(1));
+        e.line.setAttribute('y1', A.y.toFixed(1));
+        e.line.setAttribute('x2', B.x.toFixed(1));
+        e.line.setAttribute('y2', B.y.toFixed(1));
+      });
+    }
+    place();
+
+    if (!reduce) {
+      edges.forEach(function (e, i) {
+        var A = nodes[e.a], B = nodes[e.b];
+        var len = Math.ceil(Math.hypot(A.bx - B.bx, A.by - B.by)) + 20;
+        e.line.style.setProperty('--len', len);
+        e.line.style.setProperty('--i', i);
+        e.line.classList.add('drawn');
+        // Stop dashing once drawn so edges can follow drifting nodes cleanly.
+        e.line.addEventListener('animationend', function () {
+          e.line.classList.remove('drawn');
+          e.line.style.strokeDasharray = 'none';
+        });
+      });
+
+      var start = null;
+      (function tick(now) {
+        if (start === null) start = now;
+        var t = (now - start) / 1000;
+        Object.keys(nodes).forEach(function (id) {
+          var n = nodes[id];
+          n.x = n.bx + Math.sin(t * 0.5 * n.sp + n.ph) * 7;
+          n.y = n.by + Math.cos(t * 0.4 * n.sp + n.ph * 1.3) * 7;
+        });
+        place();
+        requestAnimationFrame(tick);
+      })(performance.now());
+    }
+
+    function activate(id) {
+      var cur = nodes[id];
+      svg.classList.add('has-active');
+      Object.keys(nodes).forEach(function (k) {
+        var n = nodes[k];
+        var near = cur.links.indexOf(k) > -1 || n.links.indexOf(id) > -1;
+        n.g.classList.toggle('active', k === id);
+        n.g.classList.toggle('near', near);
+        n.li.classList.toggle('active', k === id);
+      });
+      edges.forEach(function (e) {
+        e.line.classList.toggle('on', e.a === id || e.b === id);
+      });
+    }
+    function clear() {
+      svg.classList.remove('has-active');
+      Object.keys(nodes).forEach(function (k) {
+        nodes[k].g.classList.remove('active', 'near');
+        nodes[k].li.classList.remove('active');
+      });
+      edges.forEach(function (e) { e.line.classList.remove('on'); });
+    }
+
+    Object.keys(nodes).forEach(function (id) {
+      var n = nodes[id];
+      var btn = n.li.querySelector('button');
+      [n.g, n.li].forEach(function (target) {
+        target.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') activate(id); });
+        target.addEventListener('click', function () { activate(id); });
+      });
+      btn.addEventListener('focus', function () { activate(id); });
+      btn.addEventListener('blur', clear);
+      n.g.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') clear(); });
+      n.li.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') clear(); });
+    });
+
+    // Tapping empty space on touch devices resets the highlight.
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.node') && !e.target.closest('.areas')) clear();
+    });
+  })();
+  </script>
 </body>
 </html>
