@@ -1,19 +1,222 @@
 {
-  "asOf": "2026-10-31",
-  "source": "manual snapshot of Google Scholar; replaced automatically once the GitHub Action runs",
-  "citations": 1111,
+  "asOf": "2026-11-01",
+  "source": "Google Scholar via SerpApi",
+  "citations": 1113,
   "h_index": 10,
   "i10_index": 11,
   "papers": {
-    "missing-data": { "cites": 460 },
-    "latent-construct": { "cites": 216 },
-    "info-seeking": { "cites": 91 },
-    "marketing-review": { "cites": 72 },
-    "medicine-prices": { "cites": 67 },
-    "service-quality": { "cites": 48 },
-    "dementia-priorities": { "cites": 0 },
-    "book-pcdr": { "cites": 19 },
-    "book-crm": { "cites": 25 }
+    "missing-data": {
+      "cites": 461,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:kRWSkSYxWN8C"
+    },
+    "latent-construct": {
+      "cites": 216,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:sSrBHYA8nusC"
+    },
+    "info-seeking": {
+      "cites": 91,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:1qzjygNMrQYC"
+    },
+    "marketing-review": {
+      "cites": 72,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:yD5IFk8b50cC"
+    },
+    "medicine-prices": {
+      "cites": 67,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:eq2jaN3J8jMC"
+    },
+    "service-quality": {
+      "cites": 48,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:XiSMed-E-HIC"
+    },
+    "dementia-priorities": {
+      "cites": 0,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:WqliGbK-hY8C"
+    },
+    "book-pcdr": {
+      "cites": 19,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:t6usbXjVLHcC"
+    },
+    "book-crm": {
+      "cites": 26,
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:WA5NYHcadZ8C"
+    }
   },
-  "articles": []
+  "articles": [
+    {
+      "title": "Priorities for medication management information resources for people with dementia and carers: a community-driven approach using a modified Delphi method",
+      "year": 2026,
+      "cites": 0
+    },
+    {
+      "title": "Healthcare data integration using machine learning: a case study evaluation with health information-seeking behavior databases",
+      "year": 2026,
+      "cites": 16
+    },
+    {
+      "title": "Prices, availability, and affordability of adult medicines in 54 low-income and middle-income countries: evidence based on a secondary analysis",
+      "year": 2025,
+      "cites": 67
+    },
+    {
+      "title": "Conscientious objection–a cross-sectional, vignette-based, mixed methods exploration of Australian pharmacists’ perspectives",
+      "year": 2024,
+      "cites": 7
+    },
+    {
+      "title": "An investigation of academic resilience, resilience, and empathy in pharmacy students: Implications for pharmacy education",
+      "year": 2024,
+      "cites": 8
+    },
+    {
+      "title": "Combinatorially restricted computational design of protein-protein interfaces to produce IgG heterodimers",
+      "year": 2024,
+      "cites": 3
+    },
+    {
+      "title": "The Carer Assessment of MedicaTion Management GuidanCe for People With Dementia at Hospital Discharge (CATCH) Tool: Exploratory Factor Analysis",
+      "year": 2024,
+      "cites": 7
+    },
+    {
+      "title": "Carer Assessment of medicaTion management guidanCe for people living with dementia at Hospital discharge (CATCH): A national cross‐sectional survey",
+      "year": 2023,
+      "cites": 0
+    },
+    {
+      "title": "Resilience and empathy in pharmacy interns: Insights from a three-year cohort study",
+      "year": 2023,
+      "cites": 8
+    },
+    {
+      "title": "Pharmaceutical Care in Digital Revolution: Blending Digital with Human Innovation",
+      "year": 2023,
+      "cites": 0
+    },
+    {
+      "title": "Conscientious objection–A vignette-based, pilot study of international pharmacists’ perspectives",
+      "year": 2023,
+      "cites": 5
+    },
+    {
+      "title": "USING AGENT-BASED MODELS TO SIMULATE BEHAVIOR: AN INTRODUCTORY WORKSHOP: W107",
+      "year": 2023,
+      "cites": 0
+    },
+    {
+      "title": "Final discussion: blending pharmaceutical care",
+      "year": 2023,
+      "cites": 0
+    },
+    {
+      "title": "What's cooking beyond 2028",
+      "year": 2023,
+      "cites": 0
+    },
+    {
+      "title": "The artificial intelligence pizza",
+      "year": 2023,
+      "cites": 0
+    },
+    {
+      "title": "Predictors of Health Information-Seeking Behavior: Systematic Literature Review and Network Analysis (vol 23, e21680, 2021)",
+      "year": 2022,
+      "cites": 8
+    },
+    {
+      "title": "Contemporary research methods in pharmacy and health services",
+      "year": 2022,
+      "cites": 26
+    },
+    {
+      "title": "Missing data in surveys: Key concepts, approaches, and applications",
+      "year": 2022,
+      "cites": 461
+    },
+    {
+      "title": "Development of a Dynamic Model for Health Information Seeking Behaviour",
+      "year": 2022,
+      "cites": 0
+    },
+    {
+      "title": "Handling missing data in surveys—Concepts, approaches, and applications in pharmacy and health services research",
+      "year": 2022,
+      "cites": 3
+    },
+    {
+      "title": "Predictors of Health Information–Seeking Behavior: Systematic Literature Review and Network Analysis",
+      "year": 2021,
+      "cites": 91
+    },
+    {
+      "title": "Use of Visual Dashboards to Enhance Pharmacy Teaching",
+      "year": 2021,
+      "cites": 1
+    },
+    {
+      "title": "How to measure a latent construct: Psychometric principles for the development and validation of measurement instruments",
+      "year": 2020,
+      "cites": 216
+    },
+    {
+      "title": "Predictors of health information seeking behavior: a systematic review and network analysis",
+      "year": 2020,
+      "cites": 2
+    },
+    {
+      "title": "Missing data reporting in clinical pharmacy research",
+      "year": 2019,
+      "cites": 10
+    },
+    {
+      "title": "Validation of a questionnaire for consumers' perception of service quality in community pharmacy",
+      "year": 2019,
+      "cites": 28
+    },
+    {
+      "title": "Development of a questionnaire to measure consumers’ perceptions of service quality in community pharmacies",
+      "year": 2019,
+      "cites": 48
+    },
+    {
+      "title": "Pharmaceutical Care in Digital Revolution: Insights Towards Circular Innovation",
+      "year": 2019,
+      "cites": 19
+    },
+    {
+      "title": "Validation of a service quality questionnaire in community pharmacy",
+      "year": 2019,
+      "cites": 6
+    },
+    {
+      "title": "Consumer loyalty to community pharmacies: Perceived service quality versus price-competitiveness",
+      "year": 2018,
+      "cites": 1
+    },
+    {
+      "title": "Marketing activity in the community pharmacy sector–a scoping review",
+      "year": 2018,
+      "cites": 72
+    },
+    {
+      "title": "Marketing and consumers’ perceptions of service quality in Australian community pharmacies",
+      "year": 2017,
+      "cites": 0
+    },
+    {
+      "title": "Consumer perceptions of service quality in Australian community pharmacies",
+      "year": 2016,
+      "cites": 0
+    },
+    {
+      "title": "The relationship between patients' perceptions of service quality and their behavioural intentions in pharmacies using marketing strategies focussed on price discounting",
+      "year": 2016,
+      "cites": 0
+    },
+    {
+      "title": "Medicine Prices, Availability, and Affordability in 57 Developing and Middle-Income Countries: A Secondary Analysis Update",
+      "year": null,
+      "cites": 0
+    }
+  ]
 }
