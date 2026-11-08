@@ -1,16 +1,16 @@
 {
-  "asOf": "2026-11-01",
+  "asOf": "2026-11-08",
   "source": "Google Scholar via SerpApi",
-  "citations": 1113,
+  "citations": 1115,
   "h_index": 10,
   "i10_index": 11,
   "papers": {
     "missing-data": {
-      "cites": 461,
+      "cites": 462,
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:kRWSkSYxWN8C"
     },
     "latent-construct": {
-      "cites": 216,
+      "cites": 217,
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:sSrBHYA8nusC"
     },
     "info-seeking": {
@@ -18,7 +18,7 @@
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:1qzjygNMrQYC"
     },
     "marketing-review": {
-      "cites": 72,
+      "cites": 71,
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=I7_fS5sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=I7_fS5sAAAAJ:yD5IFk8b50cC"
     },
     "medicine-prices": {
@@ -71,7 +71,7 @@
     {
       "title": "Combinatorially restricted computational design of protein-protein interfaces to produce IgG heterodimers",
       "year": 2024,
-      "cites": 3
+      "cites": 4
     },
     {
       "title": "The Carer Assessment of MedicaTion Management GuidanCe for People With Dementia at Hospital Discharge (CATCH) Tool: Exploratory Factor Analysis",
@@ -131,7 +131,7 @@
     {
       "title": "Missing data in surveys: Key concepts, approaches, and applications",
       "year": 2022,
-      "cites": 461
+      "cites": 462
     },
     {
       "title": "Development of a Dynamic Model for Health Information Seeking Behaviour",
@@ -156,7 +156,7 @@
     {
       "title": "How to measure a latent construct: Psychometric principles for the development and validation of measurement instruments",
       "year": 2020,
-      "cites": 216
+      "cites": 217
     },
     {
       "title": "Predictors of health information seeking behavior: a systematic review and network analysis",
@@ -196,7 +196,7 @@
     {
       "title": "Marketing activity in the community pharmacy sector–a scoping review",
       "year": 2018,
-      "cites": 72
+      "cites": 71
     },
     {
       "title": "Marketing and consumers’ perceptions of service quality in Australian community pharmacies",
